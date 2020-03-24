@@ -1,0 +1,169 @@
+$primery-color: rgb(119, 119, 119);
+$white: #fff;
+$hover-bg: #777;
+$heading-opacity: 0.7;
+$opacity: 0.4;
+$transition: all 0.4s;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 0;
+  color: $white;
+  padding: 40px;
+  font-weight: 200;
+  opacity: $opacity;
+}
+body {
+  overflow: hidden;
+}
+
+.pages,
+.pages > div {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+
+  &:nth-child(1) {
+    background-image: url(../images/banner.jpg);
+    animation: swing 5s ease alternate-reverse;
+  }
+  &:nth-child(2) {
+    background-image: url(../images/banner1.jpg);
+  }
+  &:nth-child(3) {
+    background-image: url(../images/banner2.JPG);
+  }
+  &:nth-child(4) {
+    background-image: url(../images/banner3.jpg);
+  }
+}
+
+.menu {
+  list-style: none;
+  margin: -75px 0;
+  padding: 0;
+  position: fixed;
+  bottom: 50%;
+  right: 40px;
+
+  li {
+    clear: both;
+    display: block;
+  }
+
+  a {
+    border: 1px solid $white;
+    border-radius: 0.813em;
+    color: rgba(0, 0, 0, 0);
+    display: block;
+    float: right;
+    font-size: 0.813em;
+    height: 1.5em;
+    width: 1.5em;
+    line-height: 1.5em;
+    margin-top: 15px;
+    opacity: 0.6;
+    text-align: center;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+      width: 100px;
+      color: $hover-bg;
+      background: $white;
+    }
+
+    &.active {
+      opacity: 1;
+      width: 100px;
+      color: $hover-bg;
+      background: $white;
+    }
+  }
+}
+
+.contact-form {
+  margin: auto;
+  width: 60%;
+  border: 3px solid $hover-bg;
+  border-radius: 2px;
+  padding: 15px 15px 30px 15px;
+  text-align: justify;
+
+  h1 {
+    color: $white;
+    opacity: $heading-opacity;
+  }
+  label {
+    border-bottom: 1px solid $white;
+    font-size: 26px;
+    color: $white;
+    opacity: $opacity;
+  }
+  .input-box {
+    margin-top: 0.5em;
+    background: rgba($hover-bg, $opacity);
+    border: none;
+    border-radius: 3px;
+    border-bottom: 3px solid $hover-bg;
+    width: 70%;
+    padding: 15px;
+    font-size: 20px;
+    color: $white;
+    &:focus {
+      outline: none;
+    }
+  }
+  .btn-submit {
+    margin-top: 15px;
+    color: $white;
+    background: rgba($hover-bg, $opacity);
+    border: none;
+    padding: 9px 15px 9px 15px;
+    border-radius: 3px;
+    border-bottom: 2px solid $hover-bg;
+    transition: $transition;
+    &:hover {
+      background: $hover-bg;
+      cursor: pointer;
+    }
+  }
+
+  .textarea {
+    width: 85%;
+  }
+}
+
+// ! Grid
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 20px;
+}
+
+// !mobile
+@media screen and (max-width: 500px) {
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .input-box {
+    width: 90% !important;
+  }
+}
+
+//! Animation
+@keyframes swing {
+  100% {
+    transform: scale(1.01);
+  }
+}
